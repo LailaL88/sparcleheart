@@ -44,14 +44,43 @@ $(document).ready(function () {
 
 //Show the icon on scroll
 
-$(window).scroll(function () {
-  if ($(window).scrollTop() > $("body").height() / 100) {
-    $("#upArrow").fadeTo(500, 1);
-  }
-});
+// $(window).scroll(function () {
+//   if ($(window).scrollTop() > $("body").height() / 100) {
+//     $("#upArrow").fadeTo(500, 1);
+//   }
+// });
+
+// $(window).scroll(function () {
+//   if ($(window).scrollTop() < $("body").height() / 100) {
+//     $("#upArrow").fadeTo(500, 0);
+//   }
+// });
 
 /*
 $("#upArrow").click(function () {
   $("html, body").animate({ scrollTop: 0 }, "slow");
 });
 */
+
+// $(window).scroll(function () {
+//     if ($(window).scrollTop() > $("body").height() / 100)  {
+//       $("#upArrow").fadeTo(500, 1);
+//     }
+//   });
+
+window.addEventListener('scroll', function(e) {
+  if (this.oldScroll < this.scrollY){
+    document.getElementById('upArrow').style.display = "block"  
+    document.getElementById('upArrow').style.position = "fixed" 
+  }
+  else if(this.scrollY == 0){
+    document.getElementById('upArrow').style.display = "none"  
+    document.getElementById('upArrow').style.position = "static" 
+  }
+  this.oldScroll = this.scrollY;
+})
+
+
+ document.getElementById('upArrow').addEventListener('click', function(){
+  window.location = '#'
+})
