@@ -144,8 +144,8 @@ header {
   right: 1%;
   margin-right: 30px;
   position: fixed;
+  display:none;
   top: 120px;
-  opacity: 0;
   z-index:4;
 }
 
