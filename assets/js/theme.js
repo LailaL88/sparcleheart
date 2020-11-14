@@ -20,13 +20,13 @@ $(document).ready(function () {
       
       // Store hash
       var hash = this.hash;
-      
-      let scrollAnount =  $(hash).position().top - $( window ).height();
+        
+      //let scrollAnount =  $(hash).position().top - $(hash).height();
       // Using jQuery's animate() method to add smooth page scroll
       // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
       $("html, body").animate( 
         {
-          scrollTop: scrollAnount,
+          scrollTop: $(hash).offset().top,
           
         },
         4000,
